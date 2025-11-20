@@ -5,44 +5,69 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nurul Silpia - QA Engineer Portfolio</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --primary-color: #0d6efd;
+            --bs-primary: #3a1012;
+            --bs-primary-rgb: 58, 16, 18;
+            --bs-link-color: #3a1012;
+            --bs-link-hover-color: #2c0b0d;
         }
-        
+
+        .btn-primary {
+            --bs-btn-bg: #3a1012;
+            --bs-btn-border-color: #3a1012;
+            --bs-btn-hover-bg: #2c0b0d;
+            --bs-btn-hover-border-color: #25090b;
+            --bs-btn-active-bg: #25090b;
+            --bs-btn-active-border-color: #1f0709;
+            --bs-btn-color: #ffffff;
+        }
+
+        .btn-outline-primary {
+            --bs-btn-color: #3a1012;
+            --bs-btn-border-color: #3a1012;
+            --bs-btn-hover-bg: #3a1012;
+            --bs-btn-hover-border-color: #3a1012;
+            --bs-btn-active-bg: #3a1012;
+            --bs-btn-active-border-color: #3a1012;
+        }
+
+        .text-primary {
+            color: #3a1012 !important;
+        }
+
         body {
-            font-family: 'Poppins', sans-serif; /* Font diubah jadi Poppins */
+            font-family: 'Poppins', sans-serif;
             background-color: #f8f9fa;
             overflow-x: hidden;
             color: #333;
         }
 
-        /* Glassmorphism Navbar */
         .navbar-glass {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        /* Hero Section */
         .hero-section {
             min-height: 90vh;
             display: flex;
             align-items: center;
             background: radial-gradient(circle at 90% 10%, rgba(13, 110, 253, 0.05) 0%, transparent 40%);
         }
-        
+
         .hero-img {
             width: 100%;
             max-width: 400px;
@@ -52,7 +77,7 @@
             object-fit: cover;
             transition: transform 0.3s ease;
         }
-        
+
         .hero-img:hover {
             transform: scale(1.02);
         }
@@ -63,49 +88,53 @@
             animation: blink 1s infinite;
             color: var(--primary-color);
         }
-        
+
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
         }
 
-        /* Cards Hover Effect */
         .hover-card {
             transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
-        
+
         .hover-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
             border-color: var(--primary-color);
         }
 
-        /* Timeline Experience */
         .timeline {
-            border-left: 3px solid #e9ecef;
+            border-left: 3px solid #9d8062;
             padding-left: 2rem;
             position: relative;
         }
-        
+
         .timeline-item {
             position: relative;
             padding-bottom: 3rem;
         }
-        
+
         .timeline-item::before {
             content: '';
             width: 1rem;
             height: 1rem;
-            background: var(--primary-color);
+            background: var(--bs-primary);
             border-radius: 50%;
             position: absolute;
             left: -2.6rem;
             top: 0.25rem;
-            border: 3px solid white;
+            border: 3px solid #3a1012;
         }
 
-        /* Project Image Styling */
         .project-img {
             height: 200px;
             object-fit: cover;
@@ -124,7 +153,7 @@
     <nav id="navbar-main" class="navbar navbar-expand-lg navbar-light fixed-top navbar-glass">
         <div class="container">
             <a class="navbar-brand fw-bold text-primary" href="#">
-                &lt;NurulSilpia /&gt;
+                Silpia
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -134,7 +163,8 @@
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li> <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                 </ul>
                 <a class="btn btn-primary ms-lg-3 rounded-pill px-4" href="#contact">Hire Me</a>
             </div>
@@ -146,25 +176,29 @@
             <div class="row align-items-center flex-column-reverse flex-lg-row">
                 <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-right" data-aos-duration="1000">
                     <p class="text-uppercase text-primary fw-bold ls-1 mb-2">Hello, I am</p>
-                    <h1 class="display-3 fw-bold mb-3">Nurul Silpia</h1> 
-                    <h2 class="h3 text-secondary mb-4">I am a <span class="text-dark fw-bold typing-text" id="typewriter"></span></h2>
+                    <h1 class="display-3 fw-bold mb-3">Silpia</h1>
+                    <h2 class="h3 text-secondary mb-4">I am a <span class="text-dark fw-bold typing-text"
+                            id="typewriter"></span></h2>
                     <p class="lead text-muted mb-5">
-                        Experienced and reliable Quality Assurance professional with over 2+ years of experience. 
-                        I ensure the highest quality outcomes for web, API, and mobile applications through rigorous manual and automated testing.
+                        Experienced and reliable Quality Assurance professional with over 2+ years of experience.
+                        I ensure the highest quality outcomes for web, API, and mobile applications through rigorous
+                        manual and automated testing.
                     </p>
                     <div class="d-flex gap-3">
                         <a href="#contact" class="btn btn-primary btn-lg rounded-pill px-5 shadow-sm">Contact Me</a>
-                        <a href="https://www.linkedin.com/in/nurul-silpia" target="_blank" class="btn btn-outline-dark btn-lg rounded-pill px-4">
+                        <a href="https://www.linkedin.com/in/nurul-silpia" target="_blank"
+                            class="btn btn-outline-dark btn-lg rounded-pill px-4">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://github.com/nurulsilpia" target="_blank" class="btn btn-outline-dark btn-lg rounded-pill px-4">
+                        <a href="https://github.com/nurulsilpia" target="_blank"
+                            class="btn btn-outline-dark btn-lg rounded-pill px-4">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-duration="1000">
-                    <img src="https://ui-avatars.com/api/?name=Nurul+Silpia&background=0D6EFD&color=fff&size=400" 
-                         alt="Nurul Silpia" class="hero-img">
+                    <img src="https://images.unsplash.com/photo-1654618977232-a6c6dea9d1e8?name=Nurul+Silpia&background=3a1012&color=fff&size=400"
+                        alt="Nurul Silpia" class="hero-img">
                 </div>
             </div>
         </div>
@@ -181,9 +215,12 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-delay="100">
                     <p class="text-muted fs-5">
-                        I am currently pursuing a degree in <strong>Information Systems</strong> at <strong>Budi Luhur University</strong> (2024-2028).
-                        With a background in Computer Software Engineering from SMK Wikrama Bogor, I have honed my skills in SDLC best practices.
-                        I am adept at providing suggestions to improve productivity and have a history of helping companies achieve success through efficient testing and development.
+                        I am currently pursuing a degree in <strong>Information Systems</strong> at <strong>Budi Luhur
+                            University</strong> (2024-2028).
+                        With a background in Computer Software Engineering from SMK Wikrama Bogor, I have honed my
+                        skills in SDLC best practices.
+                        I am adept at providing suggestions to improve productivity and have a history of helping
+                        companies achieve success through efficient testing and development.
                     </p>
                     <div class="row mt-5 text-center">
                         <div class="col-4">
@@ -213,11 +250,12 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="timeline" data-aos="fade-up">
-                        
+
                         <div class="timeline-item">
                             <div class="d-flex align-items-center mb-2">
                                 <span class="badge bg-primary me-2">Aug 2022 - Present</span>
-                                <span class="badge bg-success bg-opacity-10 text-success border border-success">Full-time</span>
+                                <span
+                                    class="badge bg-success bg-opacity-10 text-success border border-success">Full-time</span>
                             </div>
                             <h5 class="fw-bold">Information Technology Quality Assurance</h5>
                             <p class="text-primary mb-1">Jejakin, South Tangerang</p>
@@ -225,7 +263,8 @@
                                 <li>Developed automated test scripts using Selenium, Playwright, and Cucumber.</li>
                                 <li>Applied SDLC best practices during scrum agile sprints.</li>
                                 <li>Created test metrics, test plans, and UAT documents to track product quality.</li>
-                                <li>Identified software defects and collaborated with developers for timely resolution.</li>
+                                <li>Identified software defects and collaborated with developers for timely resolution.
+                                </li>
                             </ul>
                         </div>
 
@@ -251,12 +290,13 @@
                             <h5 class="fw-bold">Web Developer</h5>
                             <p class="text-primary mb-1">Futami Food & Beverages, Bogor</p>
                             <ul class="text-muted small mt-2">
-                                <li>Developed custom web applications for the production unit using Laravel framework.</li>
+                                <li>Developed custom web applications for the production unit using Laravel framework.
+                                </li>
                                 <li>Utilized OOP principles to improve code readability and maintainability.</li>
                             </ul>
                         </div>
 
-                         <div class="timeline-item">
+                        <div class="timeline-item">
                             <div class="d-flex align-items-center mb-2">
                                 <span class="badge bg-secondary me-2">Jan 2020 - Mar 2020</span>
                                 <span class="badge bg-info bg-opacity-10 text-info border border-info">Internship</span>
@@ -282,15 +322,16 @@
                 <p class="text-muted">Some of the projects I have worked on.</p>
             </div>
             <div class="row g-4">
-                
+
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card hover-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" 
-                             class="project-img" alt="E-Commerce Automation">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                            class="project-img" alt="Web Automation">
                         <div class="card-body p-4">
-                            <h5 class="card-title fw-bold">E-Commerce Automation</h5>
+                            <h5 class="card-title fw-bold">Web Automation</h5>
                             <p class="card-text text-muted small mb-3">
-                                Automated end-to-end testing for an online shop platform. Covered login, search product, and checkout flow.
+                                Automated end-to-end testing for an online shop platform. Covered login, search product,
+                                and checkout flow.
                             </p>
                             <div class="d-flex flex-wrap gap-2">
                                 <span class="badge bg-light text-dark border">Selenium</span>
@@ -299,19 +340,20 @@
                             </div>
                         </div>
                         <div class="card-footer bg-white border-0 p-4 pt-0">
-                            <a href="#" class="btn btn-outline-primary w-100 rounded-pill">View Detail</a>
+                            <!-- <a href="#" class="btn btn-outline-primary w-100 rounded-pill">View Detail</a> -->
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="card hover-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1555421689-49263376da7a?auto=format&fit=crop&w=800&q=80" 
-                             class="project-img" alt="API Testing Suite">
+                        <img src="https://images.unsplash.com/photo-1607705703571-c5a8695f18f6?auto=format&fit=crop&w=800&q=80"
+                            class="project-img" alt="API Testing Suite">
                         <div class="card-body p-4">
                             <h5 class="card-title fw-bold">API Testing Suite</h5>
                             <p class="card-text text-muted small mb-3">
-                                Comprehensive API testing collection for Inventory Management System ensuring valid status codes and data integrity.
+                                Comprehensive API testing collection for Inventory Management System ensuring valid
+                                status codes and data integrity.
                             </p>
                             <div class="d-flex flex-wrap gap-2">
                                 <span class="badge bg-light text-dark border">Postman</span>
@@ -320,19 +362,20 @@
                             </div>
                         </div>
                         <div class="card-footer bg-white border-0 p-4 pt-0">
-                            <a href="#" class="btn btn-outline-primary w-100 rounded-pill">View Detail</a>
+                            <!-- <a href="#" class="btn btn-outline-primary w-100 rounded-pill">View Detail</a> -->
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="card hover-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=800&q=80" 
-                             class="project-img" alt="Mobile App QA">
+                        <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=800&q=80"
+                            class="project-img" alt="Mobile App QA">
                         <div class="card-body p-4">
                             <h5 class="card-title fw-bold">Mobile App Testing</h5>
                             <p class="card-text text-muted small mb-3">
-                                Exploratory and functional testing for a Fintech Mobile App on Android devices. Reported critical UI/UX bugs.
+                                Exploratory and functional testing for a Fintech Mobile App on Android devices. Reported
+                                critical UI/UX bugs.
                             </p>
                             <div class="d-flex flex-wrap gap-2">
                                 <span class="badge bg-light text-dark border">Android</span>
@@ -341,7 +384,7 @@
                             </div>
                         </div>
                         <div class="card-footer bg-white border-0 p-4 pt-0">
-                            <a href="#" class="btn btn-outline-primary w-100 rounded-pill">View Detail</a>
+                            <!-- <a href="#" class="btn btn-outline-primary w-100 rounded-pill">View Detail</a> -->
                         </div>
                     </div>
                 </div>
@@ -363,7 +406,8 @@
                             <i class="fas fa-robot fa-2x"></i>
                         </div>
                         <h4 class="h5 fw-bold">Automation Testing</h4>
-                        <p class="text-muted small">Selenium WebDriver, Playwright (TypeScript), Cucumber BDD Framework, JMeter for performance testing.</p>
+                        <p class="text-muted small">Selenium WebDriver, Playwright (TypeScript), Cucumber BDD Framework,
+                            JMeter for performance testing.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
@@ -372,7 +416,8 @@
                             <i class="fas fa-check-circle fa-2x"></i>
                         </div>
                         <h4 class="h5 fw-bold">QA Expertise</h4>
-                        <p class="text-muted small">Web, API, & Mobile Testing, Test Planning, Test Scripting, Bug Reporting, JIRA Software.</p>
+                        <p class="text-muted small">Web, API, & Mobile Testing, Test Planning, Test Scripting, Bug
+                            Reporting, JIRA Software.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
@@ -381,7 +426,8 @@
                             <i class="fas fa-code fa-2x"></i>
                         </div>
                         <h4 class="h5 fw-bold">Development & Tools</h4>
-                        <p class="text-muted small">Laravel Framework, PHP, Office 365, Excel. Understanding of OOP and SDLC.</p>
+                        <p class="text-muted small">SQL, Git, Jira, Office 365, Excel. Understanding of Page Objcet
+                            Model (POM) and SDLC in scrum methodology.</p>
                     </div>
                 </div>
             </div>
@@ -393,22 +439,27 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center" data-aos="zoom-in">
                     <h2 class="fw-bold mb-4">Let's Connect</h2>
-                    <p class="lead text-muted mb-5">Interested in working together? I am based in South Tangerang, Indonesia.</p>
-                    
+                    <p class="lead text-muted mb-5">Interested in working together? I am based in South Tangerang,
+                        Indonesia.</p>
+
                     <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mb-5">
-                        <a href="mailto:nurulsilpia3107@gmail.com" class="btn btn-primary btn-lg rounded-pill px-5 shadow">
+                        <a target="_blank" href="mailto:nurulsilpia3107@gmail.com"
+                            class="btn btn-primary btn-lg rounded-pill px-5 shadow">
                             <i class="fas fa-envelope me-2"></i> Email Me
                         </a>
-                        <a href="https://wa.me/6285155247226" class="btn btn-success btn-lg rounded-pill px-5 shadow">
+                        <a target="_blank" href="https://wa.me/6285155247226"
+                            class="btn btn-success btn-lg rounded-pill px-5 shadow">
                             <i class="fab fa-whatsapp me-2"></i> WhatsApp
                         </a>
                     </div>
 
                     <div class="d-flex justify-content-center gap-4">
-                        <a href="https://www.linkedin.com/in/nurul-silpia" class="text-muted text-decoration-none fs-5">
+                        <a target="_blank" href="https://www.linkedin.com/in/nurul-silpia"
+                            class="text-muted text-decoration-none fs-5">
                             <i class="fab fa-linkedin"></i> LinkedIn
                         </a>
-                        <a href="https://github.com/nurulsilpia" class="text-muted text-decoration-none fs-5">
+                        <a target="_blank" href="https://github.com/nurulsilpia"
+                            class="text-muted text-decoration-none fs-5">
                             <i class="fab fa-github"></i> GitHub
                         </a>
                     </div>
@@ -425,16 +476,16 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <script>
         // Initialize AOS Animation
         AOS.init({
-            once: true, 
-            offset: 100, 
+            once: true,
+            offset: 100,
         });
 
         // Typewriter Effect Logic
-        const texts = ["QA Engineer", "Automation Tester", "Web Developer"];
+        const texts = ["QA Engineer", "Automation Tester"];
         let count = 0;
         let index = 0;
         let currentText = "";
@@ -448,15 +499,16 @@
             letter = currentText.slice(0, ++index);
 
             document.getElementById('typewriter').textContent = letter;
-            
+
             if (letter.length === currentText.length) {
                 count++;
                 index = 0;
-                setTimeout(type, 2000); 
+                setTimeout(type, 2000);
             } else {
-                setTimeout(type, 100); 
+                setTimeout(type, 100);
             }
         })();
     </script>
 </body>
+
 </html>
